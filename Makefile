@@ -40,12 +40,14 @@ $(dependence_dir):
 	mkdir -p ./$@
 $(obj_dir):
 	mkdir -p ./$@
-.PHONY:all clean
+.PHONY:all clean tar
 all:
-	@echo $(obj)
+	@echo all
 clean:
 	@echo "start clean..."
 	-$(RM) $(target)
 	-$(RM) -r $(dependence_dir)
 	-$(RM) -r $(obj_dir)
 	@echo "clean completely"
+tar:
+	tar -zcvf ../$(target).tar.gz .
